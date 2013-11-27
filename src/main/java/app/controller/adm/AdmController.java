@@ -19,7 +19,14 @@ public class AdmController {
     
         Persona persona = (Persona) session.getAttribute(Constantes.SESSION_USUARIO);
         
-        return "ADMINISTRADOR: "+ persona.getFullName();
+        //return "ADMINISTRADOR: "+ persona.getFullName();
+        if (persona == null) {            
+            return "redirect:/security/login";
+        }else {
+            return "redirect:/adm/campo";
+            
+        }
+        
     }
     
     

@@ -14,12 +14,24 @@
 
         <div class="container-fluid">
             <div class="row-fluid">
-                <form class="form-signin" action="<%=contextPath%>/j_spring_security_check" method="post">
-                    <h2 class="form-signin-heading">Ingresar</h2>
-                    <input type="text" class="input-block-level" placeholder="Email address" name="j_username">
-                    <input type="password" class="input-block-level" placeholder="Password"  name="j_password">
-                    
-                    <button class="btn btn-large btn-primary" type="submit">Ingresar</button>
+                <form class="form-signin-heading" action="<%=contextPath%>/j_spring_security_check" method="post">
+                    <div class="container-fluid">
+                        <div class="row-fluid">
+                            <div class="span10">
+                                <img alt="AD in Tennis" src="public/app/img/campo4.jpg" />
+                                <h2>De nuevo por aqui?</h2>
+                                Si esta es la primera vez en línea, usted necesita crear una cuenta para empezar!
+                                <span class="create-acc"><a href="public/registrar.jsp">Crear una cuenta</a></span>
+                            </div>
+                            <div class="span2">
+                                <h2 class="form-signin-heading">Ingresar</h2>
+                                <input type="text" class="input-block-level" placeholder="Email address" name="j_username">
+                                <input type="password" class="input-block-level" placeholder="Password"  name="j_password">
+                                <button class="btn btn-large btn-primary" type="submit">Ingresar</button>
+                            </div>
+                        </div>
+                    </div>
+
                 </form>
             </div>
         </div>

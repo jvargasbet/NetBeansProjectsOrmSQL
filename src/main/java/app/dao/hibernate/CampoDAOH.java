@@ -29,6 +29,13 @@ public class CampoDAOH extends BaseHibernateDAO implements CampoDAO {
         criteria.addOrder(Order.asc("costoHora"));
         return criteria.list();
     }
+    
+    public List<Local> allLocal() {
+        Criteria criteria = this.getSession().createCriteria(Local.class);
+        criteria.addOrder(Order.desc("descripcion"));
+        
+        return criteria.list();
+    }
 
     public Campo get(Campo t) {
         Criteria criteria = this.getSession().createCriteria(Campo.class);

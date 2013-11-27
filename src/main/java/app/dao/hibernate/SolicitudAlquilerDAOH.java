@@ -3,9 +3,11 @@ package app.dao.hibernate;
 
 import app.dao.BaseHibernateDAO;
 import app.dao.SolicitudAlquilerDAO;
+import app.model.Campo;
 import app.model.SolicitudAlquiler;
 import java.util.List;
 import org.hibernate.Criteria;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,6 +20,14 @@ public class SolicitudAlquilerDAOH extends BaseHibernateDAO implements Solicitud
         Criteria criteria = this.getSession().createCriteria(SolicitudAlquiler.class);
         return criteria.list();
     }
+    @Override
+    public List<Campo> allCampo() {
+        Criteria criteria = this.getSession().createCriteria(Campo.class);
+        criteria.addOrder(Order.desc("descripcion"));
+        
+        return criteria.list();
+    }
+
 
     public SolicitudAlquiler get(SolicitudAlquiler t) {
         Criteria criteria = this.getSession().createCriteria(SolicitudAlquiler.class);

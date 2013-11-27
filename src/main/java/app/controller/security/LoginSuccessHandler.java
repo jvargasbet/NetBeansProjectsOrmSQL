@@ -1,4 +1,4 @@
-package app.controller.auth;
+package app.controller.security;
 
 import app.dao.UsuarioDAO;
 import app.model.Usuario;
@@ -35,11 +35,11 @@ public class LoginSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
 
         for (UsuarioRol rol : roles) {
             if (rol.getAuthority().equals(RolesEnum.ADMIN.getValue())) {
-                this.setDefaultTargetUrl("/adm");
+                this.setDefaultTargetUrl("/adm/campo");
                 break;
                 
             } else if (rol.getAuthority().equals(RolesEnum.SOCIO.getValue())) {
-                this.setDefaultTargetUrl("/socio");
+                this.setDefaultTargetUrl("/socio/alquiler");
                 break;
             }
         }

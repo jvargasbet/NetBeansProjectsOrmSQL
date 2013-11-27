@@ -24,11 +24,11 @@ public class AuthController {
 
         for (UsuarioRol rol : roles) {
             if (rol.getAuthority().equals(RolesEnum.ADMIN.getValue())) {
-                retorno = "redirect:/adm";
+                retorno = "redirect:/adm/campo";
                 break;
 
             } else if (rol.getAuthority().equals(RolesEnum.SOCIO.getValue())) {
-                retorno = "redirect:/socio";
+                retorno = "redirect:/socio/alquiler";
                 break;
             }
         }

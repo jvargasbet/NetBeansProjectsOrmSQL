@@ -17,7 +17,7 @@
             authentication-success-handler-ref="loginSuccessHandler"
         />
         
-        <logout logout-success-url="/login" />
+        
         
     </http>
     

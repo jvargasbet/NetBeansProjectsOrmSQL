@@ -11,4 +11,6 @@ public interface CampoDAO extends GenericCrud<Campo>{
 
     public List<Campo> allByLocal(Local local);
     public Campo getByName(String descripcion);
+    public List<Local> allLocal();
+    
 }
