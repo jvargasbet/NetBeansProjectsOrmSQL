@@ -16,12 +16,16 @@
             <div class="row-fluid">
                 <%@include file="/public/menuAdm.jsp" %>
                 <div class="span9">
-                    <form action="<%=contextPath%>/adm/campo/save" method="post">
+                    <div class="row row-fluid" style="alignment-adjust: central">
+                        <h1 class="span3 offset1" > Nuevo Campo </h1>
+                    </div>
+                    <form action="<%=contextPath%>/adm/campo/save" method="post" class="form-horizontal">
                         <input type ="hidden" value="${campo.id}" name="id">
                         <div class="control-group">
-                            <label class="control-label">Local</label>
+
+                            <label class="control-label">Locales</label>
                             <div class="controls">
-                                <select type="text" name="local.id">
+                                <select class="input-xxlarge"  type="text" name="local.id">
                                     <c:forEach var="item" items="${locales}">
                                         <c:choose>
                                             <c:when test='${campo.local != null && item.id == campo.local.id}'>
@@ -38,7 +42,7 @@
                         <div class="control-group">
                             <label class="control-label">Descripción</label>
                             <div class="controls">
-                                <input type="text" name="descripcion" value="${campo.descripcion}">
+                                <input class="input-xxlarge" type="text" name="descripcion" value="${campo.descripcion}">
                             </div>
                         </div>
                         <div class="control-group">
@@ -48,10 +52,11 @@
                             </div>
                         </div>
                         <div class="control-group">
-                            <label class="control-label">Estado</label>
-                            <label class="checkbox">
-                                <input type="checkbox" name="estado" value="${campo.estado}">
-                            </label>
+                            <div class="controls">
+                                <label class="checkbox">
+                                    <input type="checkbox" name="estado" value="${campo.estado}">Estado
+                                </label>
+                            </div>
                         </div>
 
                         <div class="control-group">

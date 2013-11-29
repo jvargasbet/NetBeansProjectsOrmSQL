@@ -19,10 +19,11 @@
                     <div class="row">
                         <a class="btn btn-primary pull-right" 
                            href="<%=contextPath%>/adm/servicio/new"> Nuevo </a>
-                        <h1> Servicios </h1>
+                        
                     </div>
 
                     <table class="table table-hover">
+                        <h1> Servicios </h1>
                         <tr>
                             <th class="span7">Descripcion</th>
                             <th>Costo Hora</th>
@@ -50,9 +51,6 @@
                                       </div>
                                 </td>
                             </tr>
-                            
-                            
-                            
                         </c:forEach>
 
                     </table>

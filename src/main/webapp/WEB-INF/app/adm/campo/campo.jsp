@@ -19,50 +19,57 @@
                 <div class="span9">
                     <div class="row">
                         <a class=" btn btn-primary pull-right" href="<%=contextPath%>/adm/campo/new"> Nuevo </a>
-                        <h1> campo </h1>
+
                     </div>
                     <table class="table table-striped table-hover"> 
+                        <h1 style="alignment-adjust:central "> Campos deportivos </h1>
                         <tr>
                             <th>descripcion</th>
-                            <th>estado </th>
                             <th>tipo </th>
                             <th>local </th>
-                            
+                            <th>estado </th>
+                            <th></th>
+
                         </tr>
                         <c:forEach var="item" items="${campos}">
                             <tr>
                                 <td> <c:out value="${item.descripcion}"/></td>
-                                <td> <c:out value="${item.estado}"/></td>
                                 <td> <c:out value="${item.tipo}"/></td>
                                 <td> <c:out value="${item.local.descripcion}"/></td>
-                                
-                               
+                                <td>
+                                    <c:if test="${item.estado == 1}">
+                                        <label class="label label-success"><c:out value="Activo"/> </label>
+                                    </c:if>
+                                    <c:if test="${item.estado != 1}">
+                                        <label class="label label-warning"><c:out value="Inactivo"/> </label>
+                                    </c:if>
+                                </td>
                                 <td> 
                                     <div class="btn-group">
                                         <a class="dropdown-toggle" data-toggle="dropdown" role="menu"  href="#">
-                                          <i class="icon-cog"></i>
+                                            <i class="icon-cog"></i>
                                         </a>
                                         <ul class="dropdown-menu pull-right">
                                             <li>
                                                 <a href="<%=contextPath%>/adm/campo/update/${item.id}">Editar<a>
-                                            </li>
-                                            <li>
-                                                <a href="<%=contextPath%>/adm/campo/delete/${item.id}">Eliminar<a>
-                                            </li>
-                                        </ul>
-                                      </div>
-                                </td>
-                            </tr>
-                        </c:forEach>
+                                                        </li>
+                                                        <li>
+                                                            <a href="<%=contextPath%>/adm/campo/delete/${item.id}">Eliminar<a>
+                                                                    </li>
+                                                                    </ul>
+                                                                    </div>
+                                                                    </td>
+                                                                    </tr>
+                                                                </c:forEach>
 
-                    </table>
-                </div>
-            </div>
-        </div>
+                                                                </table>
+                                                                </div>
+                                                                </div>
+                                                                </div>
 
-        <%@include file="/public/footer.jsp" %>
-    </body>
-</html>
+                                                                <%@include file="/public/footer.jsp" %>
+                                                                </body>
+                                                                </html>
 
 
 

@@ -19,14 +19,13 @@
                     <div class="row">
                         <a class="btn btn-primary pull-right" 
                            href="<%=contextPath%>/adm/local/new"> Nuevo </a>
-                        <h1> Locales </h1>
                     </div>
-
                     <table class="table table-hover">
+                        <h1> Locales </h1>
                         <tr>
-                            <th class="span3">Descripción</th>
-                            <th>Dirección</th>
-                            <th>Teléfono</th>
+                            <th class="span7">Descripción</th>
+                            <th class="span8">Dirección</th>
+                            <th class="span3">Teléfono</th>
                             <th>Estado</th>
                             <th> </th>
                         </tr>

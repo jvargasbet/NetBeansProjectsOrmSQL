@@ -19,10 +19,11 @@
                     <div class="row">
                         <a class="btn btn-primary pull-right" 
                            href="<%=contextPath%>/adm/persona/new"> Nuevo </a>
-                        <h1> Personas </h1>
+
                     </div>
 
                     <table class="table table-hover">
+                        <h1> Personas </h1>
                         <tr>
                             <th class="span3">Nombres</th>
                             <th>Direccion</th>
@@ -39,8 +40,8 @@
                                 <td><c:out value="${serv.celular}"/></td>
                                 <td><c:out value="${serv.sexo}"/></td>
                                 <td>
-                                  
-                                    
+
+
                                 </td>
                                 <td>
                                     <div class="btn-group">

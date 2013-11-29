@@ -16,11 +16,12 @@
             <div class="row-fluid">
                 <%@include file="/public/menuAdm.jsp" %>
                 <div class="span9">
-                    <div class="row">
-                        <h1> Nuevo Local </h1>
-                    </div>
 
                     <form action="<%=contextPath%>/adm/local/save" method="POST" class="form-horizontal">
+                        <div class="row row-fluid" style="alignment-adjust: central">
+                            <h1 class="span3 offset1" > Nuevo Local </h1>
+                        </div>
+
 
                         <input type="hidden" value="${local.id}" name="id">
 

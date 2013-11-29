@@ -19,10 +19,11 @@
                     <div class="row">
                         <a class="btn btn-primary pull-right" 
                            href="<%=contextPath%>/adm/admin/new"> Nuevo </a>
-                        <h1> Administradores </h1>
+                        
                     </div>
 
                     <table class="table table-hover">
+                        <h1> Administradores </h1>
                         <tr>
                             <th class="span3">Nombre</th>
                             <th>Email</th>

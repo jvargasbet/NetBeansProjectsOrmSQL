@@ -17,7 +17,7 @@
                 <%@include file="/public/menuAdm.jsp" %>
                 <div class="span9">
                     <div class="row">
-                        <h1> Nueva Persona </h1>
+                        <h1 class="span9 offset1"> Nueva Persona </h1>
                     </div>
 
                     <form action="<%=contextPath%>/adm/persona/save" method="POST" class="form-horizontal">
