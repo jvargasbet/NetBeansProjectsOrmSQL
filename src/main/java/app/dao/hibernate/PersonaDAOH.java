@@ -48,4 +48,10 @@ public class PersonaDAOH extends BaseHibernateDAO implements PersonaDAO {
         return criteria.list();
     }
 
+    @Override
+    public List<Persona> listSocio() {
+        Criteria criteria = this.getSession().createCriteria(Persona.class);
+        criteria.createCriteria("socio");
+        return criteria.list();
+    }
 }
