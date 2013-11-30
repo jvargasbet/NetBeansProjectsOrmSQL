@@ -14,7 +14,7 @@
 
         <div class="container-fluid">
             <div class="row-fluid">
-                <form class="form-signin-heading" action="<%=contextPath%>/j_spring_security_check" method="post">
+                <form id="formingreso" class="form-signin-heading" action="<%=contextPath%>/j_spring_security_check" method="post">
                     <div class="container-fluid">
                         <div class="row-fluid">
                             <div class="span10">
@@ -36,6 +36,25 @@
             </div>
         </div>
         <%@include file="/public/footer.jsp" %>
+        <script><!-- /escribir java script-->
+            $(function() {
+                $('#formingreso').validate({
+                    rules: {
+                        j_username: {required: true},
+                        j_password: {required: true}
+                    },
+                    highlight: function(element) {
+                        $(element).closest('.control-group').removeClass('success').addClass('error');
+                    },
+                    success: function(element) {
+                        element
+                                .text('OK!').addClass('valid')
+                                .closest('.control-group').removeClass('error').addClass('success');
+                    }
+                });
+            });
+        </script>
+
     </body>
 </html>
 

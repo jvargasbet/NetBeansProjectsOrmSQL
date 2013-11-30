@@ -15,10 +15,10 @@
             <div class="row-fluid">
                 <%@include file="/public/menuSocio.jsp" %>
                 <div class="span9">
-                    <form action="<%=contextPath%>/socio/alquiler/save" method="post">
+                    <form id="formingreso" action="<%=contextPath%>/socio/alquiler/save" method="post">
                         <input type ="hidden" value="${alquiler.id}" name="id">
-                        
-                        
+
+
                         <div class="control-group">
                             <label class="control-label">Local</label>
                             <div class="controls">
@@ -61,7 +61,7 @@
                                 <input type="text" name="dia" value="${alquiler.dia}">
                             </div>
                         </div>
-                            
+
                         <div class="control-group">
                             <div class="controls">
                                 <a class="btn" href="<%=contextPath%>/socio/alquiler">Cancelar</a>
@@ -75,6 +75,27 @@
         </div>
 
         <%@include file="/public/footer.jsp" %>
+        <script><!-- /escribir java script-->
+            $(function() {
+                $('#formingreso').validate({
+                    rules: {
+                        horaInicio: {required: true},
+                        horaFin: {required: true},
+                        servicios: {required: true},
+                        dia: {required: true}
+                    },
+                    highlight: function(element) {
+                        $(element).closest('.control-group').removeClass('success').addClass('error');
+                    },
+                    success: function(element) {
+                        element
+                                .text('OK!').addClass('valid')
+                                .closest('.control-group').removeClass('error').addClass('success');
+                    }
+                });
+            });
+        </script>
+
     </body>
 </html>
 

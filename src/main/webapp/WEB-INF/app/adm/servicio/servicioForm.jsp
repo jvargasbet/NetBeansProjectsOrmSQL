@@ -20,7 +20,7 @@
                         <h1 class="span9 offset1" > Nuevo Servicio </h1>
                     </div>
 
-                    <form action="<%=contextPath%>/adm/servicio/save" method="POST" class="form-horizontal">
+                    <form id ="formingreso" action="<%=contextPath%>/adm/servicio/save" method="POST" class="form-horizontal">
 
                         <input type="hidden" value="${servicio.id}" name="id">
 
@@ -52,6 +52,28 @@
             <hr>
         </div>
         <%@include file="/public/footer.jsp" %>
+        <script><!-- /escribir java script-->
+            $(function() {
+                $('#formingreso').validate({
+                    rules: {
+                        descripcion: {required: true},
+                        costoHora: {required: true}
+                    },
+                    highlight: function(element) {
+                        $(element).closest('.control-group').removeClass('success').addClass('error');
+                    },
+                    success: function(element) {
+                        element
+                                .text('OK!').addClass('valid')
+                                .closest('.control-group').removeClass('error').addClass('success');
+                    }
+                });
+            });
+
+
+        </script>
+
+
     </body>
 </html>
 

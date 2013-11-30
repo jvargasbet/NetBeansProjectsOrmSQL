@@ -19,7 +19,7 @@
                     <div class="row row-fluid" style="alignment-adjust: central">
                         <h1 class="span3 offset1" > Nuevo Campo </h1>
                     </div>
-                    <form action="<%=contextPath%>/adm/campo/save" method="post" class="form-horizontal">
+                    <form id="formingreso" action="<%=contextPath%>/adm/campo/save" method="post" class="form-horizontal">
                         <input type ="hidden" value="${campo.id}" name="id">
                         <div class="control-group">
 
@@ -71,6 +71,25 @@
         </div>
 
         <%@include file="/public/footer.jsp" %>
+        <script><!-- /escribir java script-->
+            $(function() {
+                $('#formingreso').validate({
+                    rules: {
+                        descripcion: {required: true},
+                        costoHora: {required: true}
+                    },
+                    highlight: function(element) {
+                        $(element).closest('.control-group').removeClass('success').addClass('error');
+                    },
+                    success: function(element) {
+                        element
+                                .text('OK!').addClass('valid')
+                                .closest('.control-group').removeClass('error').addClass('success');
+                    }
+                });
+            });
+        </script>
+
     </body>
 </html>
 

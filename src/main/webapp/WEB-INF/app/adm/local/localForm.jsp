@@ -17,7 +17,7 @@
                 <%@include file="/public/menuAdm.jsp" %>
                 <div class="span9">
 
-                    <form action="<%=contextPath%>/adm/local/save" method="POST" class="form-horizontal">
+                    <form id="formingreso" action="<%=contextPath%>/adm/local/save" method="POST" class="form-horizontal">
                         <div class="row row-fluid" style="alignment-adjust: central">
                             <h1 class="span3 offset1" > Nuevo Local </h1>
                         </div>
@@ -60,5 +60,25 @@
             <hr>
         </div>
         <%@include file="/public/footer.jsp" %>
+        <script><!-- /escribir java script-->
+            $(function() {
+                $('#formingreso').validate({
+                    rules: {
+                        descripcion: {required: true},
+                        direccion: {required: true},
+                        telefono: {required: true}
+                    },
+                    highlight: function(element) {
+                        $(element).closest('.control-group').removeClass('success').addClass('error');
+                    },
+                    success: function(element) {
+                        element
+                                .text('OK!').addClass('valid')
+                                .closest('.control-group').removeClass('error').addClass('success');
+                    }
+                });
+            });
+        </script>
+
     </body>
 </html>
