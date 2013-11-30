@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.NumberFormat;
+
 @Entity
 @Table(name = "servicio")
 public class Servicio implements Serializable {
@@ -17,7 +19,8 @@ public class Servicio implements Serializable {
 
     @Column(name = "descripcion")
     private String descripcion;
-
+    
+    @NumberFormat(pattern="$###,###.00")        
     @Column(name = "costo_hora")
     private Double costoHora;
 

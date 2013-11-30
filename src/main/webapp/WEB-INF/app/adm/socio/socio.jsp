@@ -19,10 +19,10 @@
                     <div class="row">
                         <a class="btn btn-primary pull-right" 
                            href="<%=contextPath%>/adm/socio/new"> Nuevo </a>
-                        <h1> Socios </h1>
                     </div>
 
                     <table class="table table-hover">
+                        <h1> Socios </h1>
                         <tr>
                             <th class="span3">Nombre</th>
                             <th>Email</th>
@@ -37,7 +37,7 @@
                                 <td><c:out value="${adm.email}"/></td>
                                 <td><c:out value="${adm.celular}"/></td>
                                 <td><c:out value="${adm.direccion}"/></td>
-                                
+
                                 <td>
                                     <div class="btn-group">
                                         <a class="dropdown-toggle" data-toggle="dropdown" role="menu"  href="#">

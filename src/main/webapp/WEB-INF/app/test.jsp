@@ -13,9 +13,11 @@
             /* Padding below the footer and lighter body text */
 
             body {
-                padding-bottom: 100px;
+                padding-bottom: 40px;
                 color: #5a5a5a;
             }
+
+
 
             /* CUSTOMIZE THE NAVBAR
             -------------------------------------------------- */
@@ -67,7 +69,7 @@
 
             /* Carousel base class */
             .carousel {
-                margin-bottom: 100px;
+                margin-bottom: 60px;
             }
 
             .carousel .container {
@@ -86,7 +88,7 @@
             }
 
             .carousel .item {
-                height: 1000px;
+                height: 500px;
             }
             .carousel img {
                 position: absolute;
@@ -157,7 +159,7 @@
             /* Thin out the marketing headings */
             .featurette-heading {
                 font-size: 50px;
-                font-weight: 1000;
+                font-weight: 300;
                 line-height: 1;
                 letter-spacing: -1px;
             }
@@ -183,7 +185,7 @@
                 }
                 .carousel img {
                     width: auto;
-                    height: 1000px;
+                    height: 500px;
                 }
 
                 .featurette {
@@ -194,11 +196,10 @@
                 .featurette-image.pull-right {
                     display: block;
                     float: none;
-                    max-width: 80%;
+                    max-width: 40%;
                     margin: 0 auto 20px;
                 }
             }
-
 
             @media (max-width: 767px) {
 
@@ -243,72 +244,70 @@
                     font-size: 18px;
                     line-height: 1.5;
                 }
-
             }
         </style>
     </head>
     <body>
         <%@include file="/public/mnuWeb.jsp" %>
+        <div id="myCarousel" class="carousel slide">
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="active item">
+                    <img src="public/app/img/campo1.jpg" alt="">
+                    <div class="container">
+                        <div class="carousel-caption"  >
+                            <h1 style="alignment-adjust: before-edge">Campeonatos</h1>
+                            <h2><p class="lead" >Seis veces campeón de la Inmaculada Concepción de secundaria - Entrenado en el club Tecsup</p></h2>
 
-        <section id="carousel">
-            <div id="myCarousel" class="carousel slide">
-                <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="active item">
-                        <img src="public/app/img/campo1.jpg" alt="">
-                        <div class="container">
-                            <div class="carousel-caption"  >
-                                <h1 style="alignment-adjust: before-edge">Campeonatos</h1>
-                                <h2><p class="lead" >Seis veces campeón de la Inmaculada Concepción de secundaria - Entrenado en el club Tecsup</p></h2>
-                                    
-                            </div>
                         </div>
-
-                    </div>
-                    <div class="item">
-                        <img src="public/app/img/campo2.jpg" alt="">
-                        <div class="container">
-                            <div class="carousel-caption">
-                                <h1>Tenis</h1>
-                                <p class="lead">Se un jugador de tenis y Representante a la Nacional bajo nuestra modalidad de capacitación continua</p>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="item">
-                        <img src="public/app/img/campo3.jpg" alt="">
-                        <div class="container">
-                            <div class="carousel-caption">
-                                <h1>Ayudanos a ayudar a otros</h1>
-                                <p class="lead">Ayudamos a los barrios mas pobres con las gananacias</p>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
-                <!-- Carousel nav -->
-                <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-                <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+                <div class="item">
+                    <img src="public/app/img/campo2.jpg" alt="">
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h1>Tenis</h1>
+                            <p class="lead">Se un jugador de tenis y Representante a la Nacional bajo nuestra modalidad de capacitación continua</p>
+                        </div>
+                    </div>
 
-        </section>
-    </div>
+                </div>
+                <div class="item">
+                    <img src="public/app/img/campo3.jpg" alt="">
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h1>Ayudanos a ayudar a otros</h1>
+                            <p class="lead">Ayudamos a los barrios mas pobres con las gananacias</p>
+                        </div>
+                    </div>
 
+                </div>
+            </div>
+            <!-- Carousel nav -->
+            <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+            <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+        </div>
+        <%@include file="/public/footer.jsp" %>
+        <script>
+            !function($) {
+                $(function() {
+                    // carousel demo
+                    $('#myCarousel').carousel()
+                })
+            }(window.jQuery)
+        </script>
+        <!--        <script src="public/bootstrap/js/bootstrap-carousel.js"></script>-->
 
-    <%@include file="/public/footer.jsp" %>
-    <script>
-        !function($) {
-            $(function() {
-                // carousel demo
-                $('#myCarousel').carousel()
-            })
-        }(window.jQuery)
-    </script>
-    <!--        <script src="public/bootstrap/js/bootstrap-carousel.js"></script>-->
-
-
-</body>
+    </body>
+    <footer class="footer">
+       
+            <div class="navbar-inner">
+                <a class="brand" href="#">CLUB NOTICIAS</a>
+            </div>
+        
+    </footer>
 </html>
