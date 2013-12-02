@@ -55,6 +55,7 @@ public class CampoController {
     @RequestMapping(value = "save", method = RequestMethod.POST)
     public String save(@ModelAttribute Campo campo) {
         if (campo.getId() == null) {
+            campo.setEstado(1);
             service.save(campo);
         } else {
             service.update(campo);

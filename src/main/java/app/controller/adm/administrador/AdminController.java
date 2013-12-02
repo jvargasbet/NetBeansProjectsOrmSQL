@@ -52,8 +52,9 @@ public class AdminController {
 
     @RequestMapping(value = "save", method = RequestMethod.POST)
     public String save(@ModelAttribute Persona persona) {
-
+        
         if (persona.getId() == null) {
+            
             service.save(persona);
         } else {
             service.update(persona);

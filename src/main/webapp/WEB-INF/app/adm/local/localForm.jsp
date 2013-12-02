@@ -66,7 +66,8 @@
                     rules: {
                         descripcion: {required: true},
                         direccion: {required: true},
-                        telefono: {required: true}
+                        telefono: {required:true, number: true}
+                        
                     },
                     highlight: function(element) {
                         $(element).closest('.control-group').removeClass('success').addClass('error');

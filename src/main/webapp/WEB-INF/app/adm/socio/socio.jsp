@@ -49,7 +49,7 @@
                                                     Editar</a>
                                             </li>
                                             <li>
-                                                <a href="<%=contextPath%>/adm/sosio/delete/${adm.id}">
+                                                <a href="<%=contextPath%>/adm/socio/delete/${adm.id}">
                                                     Eliminar</a>
                                             </li>
                                         </ul>

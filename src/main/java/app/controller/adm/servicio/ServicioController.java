@@ -49,7 +49,6 @@ public class ServicioController {
     @RequestMapping(value = "save", method = RequestMethod.POST)
     public String save(@ModelAttribute Servicio servicio) {
         
-        
         if (servicio.getId() == null) {
             service.save(servicio);
         } else {

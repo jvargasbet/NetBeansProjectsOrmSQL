@@ -19,9 +19,10 @@
                 <div class="span9">
                     <div class="row">
                         <a class=" btn btn-primary pull-right" href="<%=contextPath%>/socio/alquiler/new"> Nuevo </a>
-                        <h1> campo </h1>
+
                     </div>
                     <table class="table table-striped table-hover"> 
+                        <h1> Alquiler </h1>
                         <tr>
                             <th>Hora Ini.</th>
                             <th>Hora Fin </th>
@@ -51,29 +52,29 @@
                                 <td> 
                                     <div class="btn-group">
                                         <a class="dropdown-toggle" data-toggle="dropdown" role="menu"  href="#">
-                                          <i class="icon-cog"></i>
+                                            <i class="icon-cog"></i>
                                         </a>
                                         <ul class="dropdown-menu pull-right">
                                             <li>
                                                 <a href="<%=contextPath%>/socio/alquiler/update/${item.id}">Editar<a>
-                                            </li>
-                                            <li>
-                                                <a href="<%=contextPath%>/socio/alquiler/delete/${item.id}">Eliminar<a>
-                                            </li>
-                                        </ul>
-                                      </div>
-                                </td>
-                            </tr>
-                        </c:forEach>
+                                                        </li>
+                                                        <li>
+                                                            <a href="<%=contextPath%>/socio/alquiler/delete/${item.id}">Eliminar<a>
+                                                                    </li>
+                                                                    </ul>
+                                                                    </div>
+                                                                    </td>
+                                                                    </tr>
+                                                                </c:forEach>
 
-                    </table>
-                </div>
-            </div>
-        </div>
+                                                                </table>
+                                                                </div>
+                                                                </div>
+                                                                </div>
 
-        <%@include file="/public/footer.jsp" %>
-    </body>
-</html>
+                                                                <%@include file="/public/footer.jsp" %>
+                                                                </body>
+                                                                </html>
 
 
 

@@ -1,5 +1,5 @@
 
-package app.controller.adm.socio;
+package app.controller.socio.socio;
 
 import app.model.Persona;
 import app.zelper.GenericCrud;

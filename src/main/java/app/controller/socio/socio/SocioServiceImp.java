@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package app.controller.adm.socio;
+package app.controller.socio.socio;
 
 import app.dao.PersonaDAO;
 import app.dao.SocioDAO;
@@ -66,11 +66,18 @@ public class SocioServiceImp implements SocioService {
     @Override
     public void update(Persona t) {
         personaDAO.update(t);
-
     }
 
     @Override
     public void delete(Persona t) {
+        
+        
+        
+                
         personaDAO.delete(t);
+        
+        
+        
+        
     }
 }

@@ -16,9 +16,7 @@
             authentication-failure-url="/login?error=true"
             authentication-success-handler-ref="loginSuccessHandler"
         />
-        
-        
-        
+       
     </http>
     
     

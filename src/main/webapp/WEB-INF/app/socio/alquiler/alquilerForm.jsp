@@ -15,10 +15,11 @@
             <div class="row-fluid">
                 <%@include file="/public/menuSocio.jsp" %>
                 <div class="span9">
+                    <div class="row">
+                        <h1> Solicitar alquiler </h1>
+                    </div>
                     <form id="formingreso" action="<%=contextPath%>/socio/alquiler/save" method="post">
                         <input type ="hidden" value="${alquiler.id}" name="id">
-
-
                         <div class="control-group">
                             <label class="control-label">Local</label>
                             <div class="controls">
@@ -82,7 +83,7 @@
                         horaInicio: {required: true},
                         horaFin: {required: true},
                         servicios: {required: true},
-                        dia: {required: true}
+                        dia: {required:true, number: true}
                     },
                     highlight: function(element) {
                         $(element).closest('.control-group').removeClass('success').addClass('error');

@@ -57,7 +57,7 @@
                 $('#formingreso').validate({
                     rules: {
                         descripcion: {required: true},
-                        costoHora: {required: true}
+                        costoHora: {required:true, number: true}
                     },
                     highlight: function(element) {
                         $(element).closest('.control-group').removeClass('success').addClass('error');
