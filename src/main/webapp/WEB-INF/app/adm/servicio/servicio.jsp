@@ -33,11 +33,14 @@
                             <tr>
                                 <td><c:out value="${serv.descripcion}"/></td>
                                 <td><c:out value="${serv.costoHora}"/></td>
+                                
                                 <td>
                                      <div class="btn-group">
                                         <a class="dropdown-toggle" data-toggle="dropdown" role="menu"  href="#">
                                           <i class="icon-cog"></i>
                                         </a>
+                                         
+                                       
                                         <ul class="dropdown-menu pull-right">
                                             <li>
                                                 <a href="<%=contextPath%>/adm/servicio/update/${serv.id}">
