@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping("adm/local")
@@ -69,14 +70,33 @@ public class LocalController {
 
         return "redirect:/adm/local";
     }
-    
+
+    @ResponseBody
     @RequestMapping("activar")
-    public Map<String, Object> activar(@RequestParam long id){
+    public Map<String, Object> activar(@RequestParam long id) {
         service.activar(id);
-        Map<String, Object> respuesta =  new ManagedMap<String, Object>();
+        Map<String, Object> respuesta = new ManagedMap<String, Object>();
         respuesta.put("success", true);
         return respuesta;
     }
-    
-    
+
+    public @ResponseBody
+    String byHeader() {
+        return "Mapped by path + method + presence of header!";
+    }
+
+    @ResponseBody
+    @RequestMapping("existe")
+    public Map<String, Object> existe(@RequestParam String param) {
+        boolean exist;
+        
+        System.out.println("se ejecuto");
+        exist = service.existe(param);
+        if (exist = false) {
+        }
+
+        Map<String, Object> respuesta = new ManagedMap<String, Object>();
+        respuesta.put("success", true);
+        return respuesta;
+    }
 }

@@ -40,8 +40,24 @@ public class LocalServiceImp implements LocalService {
     @Override
     public void activar(long id) {
         Local local = localDAO.get(new Local(id));
-        int estado = (local.getEstado()==1)? 0: 1;
+        int estado = (local.getEstado() == 1) ? 0 : 1;
+
         local.setEstado(estado);
         localDAO.update(local);
+    }
+
+
+    @Override
+    public boolean existe(String param) {
+        boolean exist;
+        exist = true;
+        List<Local> local = localDAO.list();
+        for (Local localFind : local) {
+            if (localFind.getDescripcion().trim() == param.trim()) {
+                exist = false;
+                break;
+            };
+        }
+        return exist;
     }
 }

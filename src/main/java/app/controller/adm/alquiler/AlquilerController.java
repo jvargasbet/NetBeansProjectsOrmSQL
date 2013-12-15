@@ -1,4 +1,4 @@
-package app.controller.socio.alquiler;
+package app.controller.adm.alquiler;
 
 import app.model.Campo;
 import app.model.Local;
@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping("socio/alquiler")
+@RequestMapping("adm/alquiler")
 public class AlquilerController {
 
     @Autowired
@@ -32,7 +32,7 @@ public class AlquilerController {
 
         model.addAttribute("alquileres", service.list());
 
-        return "socio/alquiler/alquiler";
+        return "adm/alquiler/alquiler";
         
     }
 
@@ -42,7 +42,7 @@ public class AlquilerController {
         model.addAttribute("alquiler", new SolicitudAlquiler());
         List<Campo> campos = serviceImp.listCampo();
         model.addAttribute("campos", campos);
-        return "socio/alquiler/alquilerForm";
+        return "adm/alquiler/alquilerForm";
     }
 
     @RequestMapping("update/{id}")
@@ -51,7 +51,7 @@ public class AlquilerController {
         SolicitudAlquiler  solicitudAlquiler = service.get(new SolicitudAlquiler(id));
 
         if (solicitudAlquiler == null) {
-            return "redirect:/socio/alquiler";
+            return "redirect:/adm/alquiler";
             
         }
         model.addAttribute("alquiler", solicitudAlquiler);
@@ -59,7 +59,7 @@ public class AlquilerController {
         List<Campo> campos = serviceImp.listCampo();
         model.addAttribute("campos", campos);
         
-        return "socio/alquiler/alquilerForm";
+        return "adm/alquiler/alquilerForm";
         
     }
 
@@ -78,7 +78,7 @@ public class AlquilerController {
         } else {
             service.update(solicitudAlquiler);
         }
-        return "redirect:/socio/alquiler";
+        return "redirect:/adm/alquiler";
     }
 
     @RequestMapping("delete/{id}")
@@ -86,6 +86,6 @@ public class AlquilerController {
 
         service.delete(new SolicitudAlquiler(id));
 
-        return "redirect:/socio/alquiler";
+        return "redirect:/adm/alquiler";
     }
 }

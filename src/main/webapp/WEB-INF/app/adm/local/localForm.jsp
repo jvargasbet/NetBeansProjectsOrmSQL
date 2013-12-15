@@ -27,8 +27,9 @@
 
                         <div class="control-group">
                             <label class="control-label">Descripción</label>
+                            
                             <div class="controls">
-                                <input type="text" name="descripcion" value="${local.descripcion}">
+                                <input class="existe" type="text" name="descripcion" value="${local.descripcion}">                                
                             </div>
                         </div>
 
@@ -66,8 +67,7 @@
                     rules: {
                         descripcion: {required: true},
                         direccion: {required: true},
-                        telefono: {required:true, number: true}
-                        
+                        telefono: {required: true, number: true}
                     },
                     highlight: function(element) {
                         $(element).closest('.control-group').removeClass('success').addClass('error');
@@ -80,6 +80,25 @@
                 });
             });
         </script>
-
+        <script>
+            $(function() {
+                $('.existe').each(function(index, elem) {
+                    $(elem).click(function() {
+                        var DescriLocal = $(elem).attr('ref');
+                        console.log(DescriLocal);
+                        $.ajax({
+                            url: '/SpringClub/adm/local/existe',
+                            method: 'post',
+                            data: {id: DescriLocal},
+                            success: function(response) {
+                                if (response.success) {
+                                    location.reload();
+                                }
+                            }
+                        });
+                    });
+                });
+            });
+        </script>
     </body>
 </html>

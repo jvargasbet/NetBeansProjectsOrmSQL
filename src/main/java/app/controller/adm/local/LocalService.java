@@ -8,5 +8,6 @@ public interface LocalService extends GenericCrud<Local>{
     
     
     public void activar(long id);
+    public boolean existe(String param);
     
 }

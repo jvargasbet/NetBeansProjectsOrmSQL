@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package app.controller.socio.socio;
+package app.controller.adm.socio;
 
 import app.model.Persona;
 import org.springframework.beans.factory.annotation.Autowired;
